@@ -48,7 +48,7 @@ def get_drone(current_user_token, id):
     return jsonify(response)
 
 #update drone by id
-@api.route('/drones/<id>', methods = ['POST'])
+@api.route('/drones/<id>', methods = ['POST', 'PUT'])
 @token_required
 def update_drone(current_user_token, id):
     drone = Drone.query.get(id)
